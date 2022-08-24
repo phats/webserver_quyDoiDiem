@@ -1,0 +1,13 @@
+{% extends 'home.html' %}
+    {%block title %}{{sbd}} -{% endblock %}
+        {% block content %}
+        <p>Số báo danh: {{sbd}}</p>
+        <p>Điểm các môn:</p>
+        <p>Toán: {{diem.toan}}  Ngữ văn: {{diem.nguvan}}    Lịch sử: {{diem.lichsu}}    Địa lí: {{diem.diali}}  GDCD: {{diem.diali}}    Ngoại ngữ: {{diem.ngoaingu}}</p>
+        {% if isFloat %}
+        <p>Điểm khối {{khoi}} 2022: {{diem2022}}</p>
+        <p>Điểm tương ứng 2021 khối {{khoi}}: {{diem2021}}</p>
+        {% else %}
+        <p> Thí sinh không thuộc khối này</p>
+        {% endif %}
+    {% endblock %}

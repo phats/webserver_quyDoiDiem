@@ -31,6 +31,20 @@ class Student2022(Base):
     lichsu=Column(Float)
     diali=Column(Float)
     gdcd=Column(Float)
+    @property
+    def serialize(self):
+        return {
+            'Số Báo Danh': self.sbd,
+            'Toán':self.toan,
+            'Ngữ văn':self.nguvan,
+            'Ngoại ngữ':self.ngoaingu,
+            'Vật lí': self.vatli,
+            'Hóa học': self.hoahoc,
+            'Sinh học': self.sinhhoc,
+            'Lịch sử': self.lichsu,
+            'Địa lí':self.diali,
+            'GDCD': self.gdcd
+        }
 class Student2021(Base):
     __tablename__='student2021'
 

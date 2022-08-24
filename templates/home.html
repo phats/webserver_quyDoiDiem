@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="vi">
+    <head>
+        <title>{% block title %} {% endblock %} Quy Doi Diem Thi THPTQG 2022</title>
+    </head>
+    <body>
+        <h1>QUY ĐỔI ĐIỂM THI THPTQG 2022</h1>
+        <form action="{{url_for('traCuu')}}" method='POST'>
+            <input type="text" size="30" name="sbd" placeholder="SO BAO DANH">
+            <lable for="khoi"></lable>
+            <select name="khoi" id="khoi">
+                {% for khoi in KHOITHI %}
+                <option value={{khoi}}>Khối {{khoi}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Search">
+        </form>
+        <div class="content">
+            {% block content %} {% endblock %}
+        </div>
+    </body>
+</html>
